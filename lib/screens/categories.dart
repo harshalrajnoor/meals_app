@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/data/dummy_data.dart';
+import 'package:meals_app/widgets/category_grid_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
@@ -12,60 +14,15 @@ class CategoriesScreen extends StatelessWidget {
         title: const Text('Categories'),
       ),
       body: GridView(
+        padding: const EdgeInsets.all(24),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 3 / 2,
             mainAxisSpacing: 20,
             crossAxisSpacing: 20),
-        children: const [
-          Text(
-            '1',
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            '2',
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            '3',
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            '4',
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            '5',
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            '6',
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            '7',
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            '8',
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            '9',
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            '10',
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            '11',
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            '12',
-            style: TextStyle(color: Colors.white),
-          ),
+        children: [
+          for (final category in availableCategories)
+            CategoryGridItem(category: category)
         ],
       ),
     );
