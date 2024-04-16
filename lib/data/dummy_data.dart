@@ -17,7 +17,7 @@ var availableCategories = [
   ),
   Category(
     id: 'c3',
-    title: 'Hamburgers',
+    title: 'Burgers',
     color: Colors.orange,
   ),
   Category(
